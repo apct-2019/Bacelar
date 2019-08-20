@@ -46,7 +46,7 @@ Sintetizador:
 
 ![](sinteti.jpg)
 
-![](pinsinti.jpg)
+![](pin_sint.jpg)
 
 Temporização protocolo MICROWIRE:
 
