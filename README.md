@@ -21,18 +21,20 @@ Primeira frequência: 108.37875 MHz
 
 Espaçamento entre os canais: 3,75+25+3,75 =32,5 KHz  ou 3,75+8,33+3,75 = 15,83 KHz
 
-Para frequência de referência adota-se um TCXO de 26 MHz da PERICOM
+Para frequência de referência adota-se um TCXO de 26 MHz ASTX modelo D da Abracon.
+
+Como sugestão de sintetizador foi adotado o modelo LMX2581 da Texas.
 
 Alimentação:
- - Sintetizador: 3V 
- - TCXO : 2.8V 
+ - Sintetizador: 3,3 V
+ - TCXO : 3,3V 
 
 Consumo de corrente:
  - Sintetizador: 178 mA
  - TCXO : 1,5 mA
  
 Dimensões:
- -TCXO: 3.2x2.5mm
+ -TCXO: 2 x 1,6mm
 
 Diagrama de blocos:
 
