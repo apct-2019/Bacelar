@@ -23,6 +23,7 @@ Dados:
 
 Frequência de saída do sintetizador:
 
+
 A frequência é  ajustada via comandos pelo microcontrolador que alteram os parâmetros de integração e divisão do sinal.
 
 ![](freq.jpg)
@@ -36,20 +37,18 @@ Espaçamento entre as frequências centrais : 1,5+8,33+1,5 = 11,33 KHz  ou 3,75+
 
 Primeira frequência central : 108,4565 MHz ou 108,45875 MHz.
 
-Como sugestão de sintetizador foi adotado o modelo LMX2581 da Texas.
 
-
-Diagrama de blocos:
+#Diagrama de blocos:
 
 Em cinza a parte do sintetizador.
 
 ![](modembloco.png)
 
-Pinagem:
+#Pinagem:
 
 ![](modempin.jpg)
 
 
-Teste de ruído de fase:
+#Teste de ruído de fase:
 
 ![](phasenoise_modem.jpeg)
