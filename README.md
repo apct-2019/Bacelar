@@ -20,6 +20,7 @@ Dados:
  - Faixa de frequências de saída: 119–960 MHz ,usando o oscilador a cristal interno de 30 Mhz ;
  - Ruído de fase para um shift de 10 Khz da frequência central, para portadora à 460 Mhz: -106 dBc/Hz;
  - Dimensões: 4x4 mm;
+ - Temperatura de operação : -40 à +85 °C; 
 
 Frequência de saída do sintetizador:
 
