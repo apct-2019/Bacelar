@@ -1,6 +1,6 @@
 # Oscilador Local
 
-O oscilador local é responsável por fornecer o tom para o batimento com o sinal recebido. Deve proporcionar a frequência adequada dependendo do canal sintonizado, de forma que à imagem resultante seja aplicado um único filtro. 
+O oscilador local é responsável por fornecer o tom para o batimento com o sinal recebido. Deve proporcionar a frequência adequada dependendo do canal sintonizado, de forma que à imagem resultante seja aplicado um único filtro.
 
 Especificações:
   - Range de frequência : 108 a 136,9917 MHz
@@ -27,12 +27,12 @@ Como sugestão de sintetizador foi adotado o modelo LMX2581 da Texas.
 
 Alimentação:
  - Sintetizador: 3,3 V
- - TCXO : 3,3V 
+ - TCXO : 3,3V
 
 Consumo de corrente:
  - Sintetizador: 178 mA
  - TCXO : 1,5 mA
- 
+
 Dimensões:
  -TCXO: 2 x 1,6mm
 
@@ -55,11 +55,13 @@ Temporização protocolo MICROWIRE:
 ![](timing.jpg)
 
 
+# Update
 
+O Si464, cujo datasheet está disponível no repositório, foi sugerido por ser capaz de sintonizar as frequências desejadas sem a necessidade de um oscilador externo, ter uma comunicação mais conhecida (SPI) e disponibilizar demodulações alternativas, para comparação e testes.
 
-
-
-
-
-
-
+Dados:
+ - Saída de até +20 dBm , dispensando amplificação para o mixer, que trabalha com input de +13 dBm;
+ - Consumo de corrente: 10.6/13.6 mA;
+ - Alimentação: 3,3V típico;
+ - Faixa de frequências de saída: 119–960 MHz ,usando o oscilador a cristal interno de 30 Mhz ;
+ - Ruído de fase para um shift de 10 Khz da frequência central, para portadora à 460 Mhz: -106 dBc/Hz  
