@@ -17,10 +17,10 @@ Dados:
  - Saída de até +20 dBm , dispensando amplificação para o mixer, que trabalha com input de +13 dBm;
  - Consumo de corrente: 10,6 ou 13,6 mA ,para baixa ou alta performance;
  - Alimentação: 3,3V típico;
- - Faixa de frequências de saída: 119–960 MHz ,usando o oscilador a cristal interno de 30 Mhz ;
+ - Faixa de frequências de saída: 119–960 MHz ,usando o oscilador a cristal interno de 30 Mhz,
  - Ruído de fase para um shift de 10 Khz da frequência central, para portadora à 460 Mhz: -106 dBc/Hz;
  - Dimensões: 4x4 mm;
- - Temperatura de operação : -40 à +85 °C; 
+ - Temperatura de operação : -40 à +85 °C;
 
 Frequência de saída do sintetizador:
 
@@ -52,4 +52,30 @@ Em cinza a parte do sintetizador.
 
 #Teste de ruído de fase:
 
+Teste real:
+
 ![](phasenoise_modem.jpeg)
+
+Teste no simulador AWR:
+
+Para o teste foram desenvolvidos dois circuitos para a downconvertion do sinal RF utilizando um modelo de mixer próximo ao adotado, o que foi modificado foram os valores de P1db e IP3 que estavam próximos a potência do sinal RF na documentação do mixer.
+
+O objetivo foi analizar o impacto do ruído de phase do oscilador local no batimento, os valores de ruído de fase usados na simulação foram os 4 disponíveis no datasheet e apresentados no seguinte gráfico:
+
+![](phase_noise.jpg)
+
+Os resultado para os circuitos:
+
+Sem ruído:
+
+![](circuit_no_noise.jpg)
+
+e com ruído:
+
+![](phase_noise_circuit.jpg)
+
+foram:
+
+![](comphase.jpg)
+
+![](semphase.jpg)
