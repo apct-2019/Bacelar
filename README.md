@@ -24,33 +24,46 @@ Dados:
 
 Frequência de saída do sintetizador:
 
+Como vimos nos dados acima , para um cristal de 30 Mhz o range de frequências de saída do oscilador é inferior ao necessário, começa em 119 Mhz. Dessa forma é necessário usar um TCXO com frequência inferior à 30 Mhz.
 
-A frequência é  ajustada via comandos pelo microcontrolador que alteram os parâmetros de integração e divisão do sinal.
+### Calculo da frequência do TCXO
+
+Baseando-se na equação do datasheet para o PLL Fractional-N:  
 
 ![](freq.jpg)
 
+Usando o menor outdiv : 24 e verificando o menor valor para o termo multiplicativo nos valores de registradores da parte real e fracionária, a parte fracionária é irrelevante para o valore mínimo se ajustada para o mínimo possível.
+
+![](reg1.jpg)
+
+O valor mínimo é 0x3C = 60 . Usando a fórmula temos 60 x 60 / 24 = 150 MHz de mínimo e não o indicado na tabela 119 MHz
+
+Fonte APIsi4464 (marca d'água de work in progress) pdf na pasta do git, no  site da Silicon Labs não achei nehuma outra fonte para os valores de registradores.
+
+### Cálculo das frequências 
+
 É possível programar uma frequência inicial e depois passos, para atender todos os canais sem a necessidade de alterar quatro registradores, com EZ Frequency programmer.
 
-Primeira frequencia para pulsar : 108 MHz + Freq central (em relação a 108 MHz) + 455 KHz.
-Dessa forma o batimento resultará em tornar a frequencia central do sinal resultante 455 KHz.
+Primeira frequência para pulsar : 108 MHz + Freq central (em relação a 108 MHz) + 455 KHz.
+Dessa forma o batimento resultará em tornar a frequência central do sinal resultante 455 KHz.
 
 Espaçamento entre as frequências centrais : 1,5+8,33+1,5 = 11,33 KHz  ou 3,75+25+3,75 = 32,5 KHz.
 
 Primeira frequência central : 108,4565 MHz ou 108,45875 MHz.
 
 
-#Diagrama de blocos:
+## Diagrama de blocos:
 
 Em cinza a parte do sintetizador.
 
 ![](modembloco.png)
 
-#Pinagem:
+## Pinagem:
 
 ![](modempin.jpg)
 
 
-#Teste de ruído de fase:
+## Teste de ruído de fase:
 
 Teste real:
 
@@ -58,24 +71,21 @@ Teste real:
 
 Teste no simulador AWR:
 
-Para o teste foram desenvolvidos dois circuitos para a downconvertion do sinal RF utilizando um modelo de mixer próximo ao adotado, o que foi modificado foram os valores de P1db e IP3 que estavam próximos a potência do sinal RF na documentação do mixer.
+Para o teste foram desenvolvidos dois circuitos para a downconversion do sinal RF utilizando um modelo de mixer próximo ao adotado, o que foi modificado foram os valores de P1db e IP3 que estavam próximos a potência do sinal RF na documentação do mixer.
 
-O objetivo foi analizar o impacto do ruído de phase do oscilador local no batimento, os valores de ruído de fase usados na simulação foram os 4 disponíveis no datasheet e apresentados no seguinte gráfico:
+O objetivo foi analisar o impacto do ruído de fase do oscilador local no batimento, os valores de ruído de fase usados na simulação foram os 4 disponíveis no datasheet e apresentados no seguinte gráfico:
 
 ![](phase_noise.jpg)
 
-Os resultado para os circuitos:
+Os resultado para o circuito:
 
-Sem ruído:
+![](circuitfunc.jpg)
 
-![](circuit_no_noise.jpg)
-
-e com ruído:
-
-![](phase_noise_circuit.jpg)
 
 foram:
 
-![](comphase.jpg)
+![](potspec.jpg)
 
-![](semphase.jpg)
+![](iffase.jpg)
+
+![](ifpuro.jpg)
