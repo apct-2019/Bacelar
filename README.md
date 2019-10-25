@@ -40,7 +40,7 @@ O valor mínimo é 0x3C = 60 . Usando a fórmula temos 60 x 60 / 24 = 150 MHz de
 
 Fonte APIsi4464 (marca d'água de work in progress) pdf na pasta do git, no  site da Silicon Labs não achei nehuma outra fonte para os valores de registradores.
 
-### Cálculo das frequências 
+### Cálculo das frequências
 
 É possível programar uma frequência inicial e depois passos, para atender todos os canais sem a necessidade de alterar quatro registradores, com EZ Frequency programmer.
 
@@ -62,6 +62,13 @@ Em cinza a parte do sintetizador.
 
 ![](modempin.jpg)
 
+## Esquemáticos
+
+Tendo como referência as documentações da Silicon Labs: [AN785](AN785.pdf) e [AN629](AN629.pdf) os seguintes esquemáticos para o XTAL e sintetizador foram sugeridos:
+
+![](xtal.jpeg)
+
+![](esquematico.jpg)
 
 ## Teste de ruído de fase:
 
