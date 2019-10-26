@@ -24,7 +24,7 @@ Dados:
 
 Frequência de saída do sintetizador:
 
-Como vimos nos dados acima , para um cristal de 30 Mhz o range de frequências de saída do oscilador é inferior ao necessário, começa em 119 Mhz. Dessa forma é necessário usar um TCXO com frequência inferior à 30 Mhz.
+Como vimos nos dados acima , para um cristal de 30 Mhz o range de frequências de saída do oscilador é inferior ao necessário, começa em 119 Mhz. Dessa forma é necessário usar um TCXO com frequência inferior à 30 Mhz. Adotou-se um cristal de 26Mhz [WT325](WT325.pdf).
 
 ### Calculo da frequência do TCXO
 
@@ -39,6 +39,8 @@ Usando o menor outdiv : 24 e verificando o menor valor para o termo multiplicati
 O valor mínimo é 0x3C = 60 . Usando a fórmula temos 60 x 60 / 24 = 150 MHz de mínimo e não o indicado na tabela 119 MHz
 
 Fonte APIsi4464 (marca d'água de work in progress) pdf na pasta do git, no  site da Silicon Labs não achei nehuma outra fonte para os valores de registradores.
+
+Aplicando uma regra de três simples para a mínima frequência (119 Mhz) e trocando o cristal para 26 MHz, temos um novo mínimo de 103.1 MHz e máximo de 910 MHz.
 
 ### Cálculo das frequências
 
